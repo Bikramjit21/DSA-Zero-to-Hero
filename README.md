@@ -5,8 +5,9 @@ _This repo will contain every code right from the root level for learning and pr
 
 ##### _Getting started with DSA_
 
-###### _Step 1: Visit the **Practice** folder_
-###### _Step 2: If you're a complete beginner then visit **Pattern Problems** folder at the first_
+###### _Step 1: Visit the_ **_Practice_** _folder_
+###### _Step 2: At first lets print_ **_Hello World_** _at first_
+###### _Step 2: If you're a complete beginner then visit_ **_Pattern Problems_** _folder at the first_
 
 
 
