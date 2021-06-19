@@ -2,6 +2,9 @@
 
 ![DSA](C:\Users\User\Downloads\dsa)
 
+http://github.com - automatic!
+[Github](http://github.com)
+
 ##### _About_
 _This repo will contain every code right from the root level for learning and practicing __DSA__ ._
 
