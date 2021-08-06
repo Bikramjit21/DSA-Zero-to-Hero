@@ -1,0 +1,23 @@
+Find the union of two arrays.
+
+solution:
+#include <bits/stdc++.h>
+#include<unordered_map>
+
+using namespace std;
+
+int main()
+{
+    
+    unordered_map<int,int>map;
+    int n,m;
+    cin>>n>>m;
+    
+    int a[n],b[n];
+    for(int i=0;i<n;i++) cin>>a[i], map[a[i]]++;
+    for(int i=0;i<m;i++) cin>>a[i], map[a[i]]++;
+    
+    cout<<map.size()<<endl;
+    
+    return 0;
+}
