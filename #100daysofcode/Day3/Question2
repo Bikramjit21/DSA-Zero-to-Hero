@@ -1,0 +1,29 @@
+Find the factorial of a number.
+
+solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int fact(int n){
+    if(n<=1){
+        return 1;
+    }
+    
+    // for ascending
+    return n*fact(n-1);
+    
+    // for descending
+    // count(n-1);
+    
+}
+int main()
+{
+    cout<<"Enter the number: ";
+    int n;
+    cin>>n;
+    
+    // cout<<"Counting: "<<endl;
+    cout<<"Factorial of "<<n<<" is: "<<fact(n);
+    
+    return 0;
+}
