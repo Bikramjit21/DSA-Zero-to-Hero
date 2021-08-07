@@ -1,0 +1,31 @@
+Count numbers in ascending or descending form using recursion.
+
+solution:
+#include <iostream>
+using namespace std;
+
+void count(int n){
+    if(n<=0){
+        return;
+    }
+    
+    // for ascending
+    count(n-1);
+    
+    cout<<n<<endl;
+    
+    // for descending
+    // count(n-1);
+    
+}
+int main()
+{
+    cout<<"Enter the number of numbers: ";
+    int n;
+    cin>>n;
+    
+    cout<<"Counting: "<<endl;
+    count(n);
+    
+    return 0;
+}
