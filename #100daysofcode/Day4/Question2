@@ -1,0 +1,27 @@
+Convert a number from Binary to Decimal.
+
+solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int binaryToDecimal(int n){
+    int dec_value=0,base=1;
+    
+    while(n){
+        int last_digit=n%10;
+        n/=10;
+        dec_value+=last_digit*base;
+        base*=2;
+    }
+    return dec_value;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the number to convert: ";
+    cin>>n;
+    cout<< "The Decimal is: "<<binaryToDecimal(n);
+
+    return 0;
+}
