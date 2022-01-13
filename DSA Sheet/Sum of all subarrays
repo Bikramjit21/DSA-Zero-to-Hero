@@ -1,0 +1,33 @@
+Problem: Given an array a[] of size n. You have to output the sum of each subarrays present in the array.
+
+Example:
+Input:
+5
+1 2 0 7 2
+
+Output:
+1 3 3 10 12 2 2 9 11 0 7 9 7 9 2
+
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int curr=0;
+    for(int i=0;i<n;i++){
+        curr=0;
+        for(int j=i;j<n;j++){
+            curr+=a[j];
+            cout<<curr<<" ";
+        }
+    }
+    return 0;
+}
