@@ -1,0 +1,69 @@
+Problem 1: Reverse an array using two pointers
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void f(int a[], int l, int r){
+    if(l>=r) return;
+    swap(a[l],a[r]);
+    f(a,l+1,r-1);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[n];
+    f(a,0,n-1);
+    for(int i=0;i<n;i++) cout<<a[n]<<" ";
+    return 0;
+}
+
+Time Complexity : 0(n)
+S
+
+Problem 2: Reverse an array using single pointer
+
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+void f(int a[], int i, int n){
+    if(i>=n/2) return;
+    swap(a[i],a[n-i-1]);
+    f(a,i+1,n-1);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[n];
+    f(a,0,n);
+    for(int i=0;i<n;i++) cout<<a[n]<<" ";
+    return 0;
+}
+
+Time Complexity: 0(n/2)
+
+Problem 3: Check a string is palindrome or not
+
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+bool f(string s, int i){
+    if(i>=s.size()/2) return true;
+    if(s[i]!=s[s.size()-i-1]) return false;
+    return f(s,i+1);
+}
+int main()
+{
+    string s;
+    cin>>s;
+    cout<<f(s,0);
+    return 0;
+}
+
+Time Complexity: O(n/2)
+Space Complexity: O(n/2)
