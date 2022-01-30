@@ -1,0 +1,23 @@
+Problem Statement:
+If you are coming to this problem, I hope you must have solved the fibonacci problem first.
+So just like fibonacci series, here we have to print the sum of last three terms. 
+It is a slight modification of the fibonacci series.
+
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int trifibo(int n){
+    if(n<=1){
+        return n;
+    }
+    else{
+        return trifibo(n-1)+trifibo(n-2)+trifibo(n-3);
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<trifibo(n);
+}
