@@ -1,0 +1,28 @@
+Problem Statement:
+Given an array, you have to print the first occurence of a number in the array using recursion.
+
+Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+void printArray(int arr[], int n, int i, int t){
+    if(i==n){
+        return;
+    }
+    if(arr[i]==t){
+        cout<<i<<" ";
+        return;
+    }
+    printArray(arr,n,++i,t);
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    printArray(arr,n,0,5);
+}
