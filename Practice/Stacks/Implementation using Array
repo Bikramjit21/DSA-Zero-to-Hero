@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define n 100
+
+class Stack{
+    int* arr;
+    int top;
+    
+    public:
+    Stack(){
+        arr = new int[n];
+        top = -1;
+    }
+    
+    void canPush(int x){
+        if(top==n-1){
+            cout<<"StackOverflow"<<" ";
+            return;
+        }
+        
+        top++;
+        arr[top] = x;
+    }
+    
+    void canPop(){
+        if(top==-1){
+            cout<<"No element left to pop"<<endl;
+            return;
+        }
+        top--;
+    }
+    
+    int isTop(){
+        if(top==-1){
+            cout<<"No element left in stack"<<endl;
+            return -1;
+        }
+        return arr[top];
+    }
+    
+    bool isEmpty(){
+        return top==-1;
+    }
+};
+
+int main()
+{
+    Stack st;
+    
+    st.canPush(2);
+    st.canPush(4);
+    st.canPush(6);
+    cout<<st.isTop()<<endl;
+    st.canPop();
+    st.canPop();
+    cout<<st.isTop()<<endl;
+    st.canPop();
+    st.canPop();
+    cout<<st.isEmpty();
+}
