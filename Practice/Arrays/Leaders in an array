@@ -1,0 +1,72 @@
+Problem: Given an array a[] of size n. You have to find the leaders in the array.
+
+An element is leader if it is greater than all the elements to its right side. And the rightmost element is always a leader.
+
+Solution:
+
+Way1: Using two loops. One loop will run through all the array starting from 0 to n-1 and will select each element to check 
+      and other loop will run to the rest of the array right to it and check all the elements are smaller or not.
+
+Code:
+#include <iostream>
+using namespace std;
+
+void printLeader(int a[], int n){
+    for(int i=0;i<n;i++){
+        int j;
+        for(j=i+1;j<n;j++){
+            if(a[i]<=a[j]){
+                break;
+            }
+        }
+        if(j==n){
+            cout<<a[i]<<" ";
+        }
+    }    
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    printLeader(a,n);
+    return 0;
+}
+
+Time Complexity:O(n*n) Space Complexity: O(1)
+
+Way2: Using traversing from the end and tracking max element using a variable. As we know the right most element will always be a leader, so we will print that. 
+      Then starting from n-2 we check if max element smaller than the rest, if found then initiaize max to it and then print that.
+      
+Code:
+#include <iostream>
+using namespace std;
+
+void printLeader(int a[], int n){
+    int max2right = a[n-1];
+    cout<<max2right<<" ";
+    for(int i=n-2;i>=0;i--){
+        if(max2right<a[i]){
+            max2right=a[i];
+            cout<<max2right<<" ";
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    printLeader(a,n);
+    return 0;
+}
+
+Time Complexity: O(n) Space Complexity: O(1)
