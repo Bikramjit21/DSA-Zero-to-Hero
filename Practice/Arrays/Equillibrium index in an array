@@ -1,0 +1,82 @@
+Question: Given an array a[] and size n. You have to find the equillibrium index within the array.
+
+An equillibrium index is where the sum of left elements and right elenments of that index is same.
+
+Solution:
+
+Way1: Using prefix and suffix sums and then check if both of them are same or not.
+
+Code: 
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int equillibrium(int a[], int n){
+    int prefixSum[n];
+    prefixSum[0] = a[0];
+    for(int i=1;i<n;i++){
+        prefixSum[i] = prefixSum[i-1] + a[i];
+    }
+    int suffixSum[n];
+    suffixSum[n-1] = a[n-1];
+    for(int i=n-2;i>=0;i--){
+        suffixSum[i] = suffixSum[i+1] + a[i];
+    }
+    for(int i=1;i<n-1;i++){
+        if(prefixSum[i] == suffixSum[i]){
+            return a[i];
+        }
+    }
+    return -1;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cout<<equillibrium(a,n);
+    return 0;
+}
+
+Way2:
+
+Code:
+#include <bits/stdc++.h>
+using namespace std;
+
+int equillibrium(int a[], int n)
+{
+	int rightSum=0,leftSum=0;
+	for (int i=1;i<n;i++)
+		rightSum+=a[i];
+	for (int i=0,j=1;j<n;i++,j++) {
+		rightSum -= a[j];
+		leftSum += a[i];
+		if (leftSum==rightSum)
+			return a[i+1];
+	}
+	return -1;
+}
+
+int main()
+{
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++){
+	    cin>>a[i];
+	}
+	cout << equillibrium(a,n);
+	return 0;
+}
