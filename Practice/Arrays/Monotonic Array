@@ -1,0 +1,39 @@
+Problem: Given an array a[] of size n. You have to tell if the array is a monotonic array or not.
+
+A monotic array is an array which is either non increasing or non-decreasing.
+
+Solution:
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isMonotonic(int a[], int n){
+    int isNonDecreasing = true;
+    int isNonIncreasing = true;
+    for(int i=0;i<n;i++){
+        if(a[i]<a[i-1]){
+            isNonDecreasing = false;
+        }
+        if(a[i]>a[i-1]){
+            isNonIncreasing = false;
+        }
+    }
+    return isNonIncreasing or isNonDecreasing;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    
+    int ans[n];
+    for(int i=0;i<n;i++){
+        ans[n-i-1]=a[i];
+    }
+    
+    cout<<isMonotonic(a,n);
+}
